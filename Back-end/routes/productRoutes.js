@@ -7,6 +7,7 @@ import Product from '../models/productModels.js'
 
 router.get('/',asyncHandler( async(req,res)=>{
     const products = await Product.find({})
+
     res.json(products)
 }))
 router.get('/:id',asyncHandler( async(req,res)=>{
