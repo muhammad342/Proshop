@@ -32,7 +32,7 @@ const checkoutHandler=()=>{
                 <h1>
                     Shopping Cart
                 </h1>
-                {cartItems.countInStock===0 ? <Message>Your cart is empty <Link to='/' >Go Back</Link> </Message> : (
+                {cartItems.length===0 ? <Message>Your cart is empty <Link to='/' >Go Back</Link> </Message> : (
                     <ListGroup variant='flush'>
                         {cartItems.map((item)=>(
                             <ListGroup.Item key={item.product}>
