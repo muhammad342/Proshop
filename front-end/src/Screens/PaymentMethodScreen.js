@@ -21,12 +21,12 @@ const PaymentMethodScreen = ({history}) => {
     return (
         <FormContainer>
             <CheckoutSteps step1 step2 step3/>
-            <h1>Payment Method</h1>
-            <Form onSubmit={submitHandler}>
-           <Form.Group>
+            <h3>Payment Method</h3>
+            <Form onSubmit={submitHandler} >
+           <Form.Group className='mb-2'>
                <Form.Label as='legend'>select method</Form.Label>
                <Col>
-               <Form.Check type='radio' id='paypal' name='paymentMethod' value='paypal' checked onChange={(e)=>setPaymentMethod(e.target.value)}></Form.Check>
+               <Form.Check type='radio' id='paypal' name='paymentMethod' value='paypal' label='paypal or credit card' checked onChange={(e)=>setPaymentMethod(e.target.value)}></Form.Check>
                </Col>
 
            </Form.Group>

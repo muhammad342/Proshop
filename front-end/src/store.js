@@ -16,14 +16,12 @@ const reducer=combineReducers({
 })
 const getItemFromLocalStorage=localStorage.getItem('cartItems') ? JSON.parse(localStorage.getItem('cartItems')) : []
 const getUserInfoFromLocalStorage=localStorage.getItem('userInfo') ? JSON.parse(localStorage.getItem('userInfo')) : null
-const ShippingAddressFromLocalStorage=localStorage.getItem('shippingAddress') ? JSON.parse('shippingAddress') : {}
+const ShippingAddressFromLocalStorage=localStorage.getItem('shippingAddress') ? JSON.parse(localStorage.getItem('shippingAddress')) : {}
 const initialState={
     cart:{cartItems:getItemFromLocalStorage,shippingAddress:ShippingAddressFromLocalStorage},
     userLogin:{userInfo:getUserInfoFromLocalStorage},
 }
-
 const middleware=[thunk]
-
 const store = createStore(
     reducer, initialState, composeWithDevTools(applyMiddleware(...middleware))
      )
